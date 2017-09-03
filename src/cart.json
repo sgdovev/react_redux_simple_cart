@@ -1,0 +1,38 @@
+{
+  "customer": {
+	"first_name": "Bob",
+	"last_name": "Nickolopoulos"
+  },
+  "items": [
+	{
+	  "id": 17437,
+	  "name": "Flying V Custom",
+	  "thumbnail": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2017/Custom/Flying-V-Custom/CSFVPSL11050_t.jpg",
+	  "unit_price": 3799.00,
+	  "quantity": 1
+	},
+	{
+	  "id": 75639,
+	  "name": "SG Custom",
+	  "thumbnail": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2017/Custom/SG-Custom/SGC-PSL11052_t.jpg",
+	  "unit_price": 2999.00,
+	  "quantity": 1
+	},
+	{
+	  "id": 58364,
+	  "name": "Doves In Flight",
+	  "thumbnail": "http://images.gibson.com.s3.amazonaws.com/Products/Acoustic-Guitars/2016/Doves-in-Flight-Quilt/SSDFQCGH1_t.jpg",
+	  "unit_price": 5999.00,
+	  "quantity": 1
+	},
+	{
+	  "id": 64528,
+	  "name": "SG Std Bass",
+	  "thumbnail": "http://images.gibson.com.s3.amazonaws.com/Site-Images/Redesign/2015/Thumbs/SGSTDBass_t.jpg",
+	  "unit_price": 1679.00,
+	  "quantity": 1
+	}
+  ],
+  "sales_tax": 8.5,
+  "subtotal": 0
+}
