@@ -1,7 +1,12 @@
 {
   "customer": {
-	"first_name": "Bob",
-	"last_name": "Nickolopoulos"
+	"first_name": "Eddie",
+	"last_name": "T. Head",
+	"street": "22 Acacia Avenue",
+	"town": "London",
+	"state": "Ontario",
+	"zip": "23124",
+	"country": "Canada"
   },
   "items": [
 	{

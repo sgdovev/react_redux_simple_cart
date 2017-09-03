@@ -5,6 +5,9 @@ import {bindActionCreators} from 'redux';
 import {addItem, removeItem} from './actions';
 import _ from 'lodash';
 
+/**
+ * Main component for the application
+ */
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -14,6 +17,10 @@ class App extends Component {
 		this.dec = this.dec.bind(this);
 	}
 	
+	/**
+	 * calculate the total of all items and add sales tax.
+	 * @returns {string}
+	 */
 	totalCalc() {
 		let subtotal = 0;
 		_.forEach(this.props.items, function(item) {
@@ -22,6 +29,10 @@ class App extends Component {
 		return (subtotal * ((this.props.tax * 0.01) + 1)).toFixed(2);
 	}
 	
+	/**
+	 * calculate the subtotal of all items before tax.
+	 * @returns {string}
+	 */
 	subtotalCalc() {
 		let subtotal = 0;
 		_.forEach(this.props.items, function(item) {
@@ -30,19 +41,27 @@ class App extends Component {
 		return subtotal.toFixed(2);
 	}
 	
-	inc(id) {
-		console.log("inc", id);
-	}
-	
-	dec(id) {
-		console.log("dec", id);
-	}
-	
-	
 	render() {
 		return (
 			<div className="App">
-				<table>
+				<table cellPadding={5} cellSpacing={0} style={{width: 300, align: "right"}}>
+					<thead>
+					<tr>
+						<th>Customer Info</th>
+					</tr>
+					<tbody>
+					<tr>
+						<td>
+							{this.props.customer.first_name + " " + this.props.customer.last_name}<br/>
+							{this.props.customer.street}<br/>
+							{this.props.customer.town}, {this.props.customer.state} {this.props.customer.zip}<br/>
+							{this.props.customer.country}
+						</td>
+					</tr>
+					</tbody>
+					</thead>
+				</table>
+				<table cellPadding={5} cellSpacing={0}>
 					<thead>
 					<tr>
 						<th>Image</th>
@@ -66,8 +85,8 @@ class App extends Component {
 						</tr>
 					})}
 					<tr>
-						<td colSpan={4} style={{textAlign: "right"}}>Subtotal</td>
-						<td>${this.subtotalCalc()}</td>
+						<td colSpan={4} style={{textAlign: "right", borderTop: "solid 1px #999999"}}>Subtotal</td>
+						<td style={{borderTop: "solid 1px #999999"}}>${this.subtotalCalc()}</td>
 					</tr>
 					<tr>
 						<td colSpan={4} style={{textAlign: "right"}}>sales tax ({this.props.tax}%)</td>
@@ -88,7 +107,8 @@ function mapStateToProps(state) {
 	return {
 		items: state.items,
 		tax: state.sales_tax,
-		subtotal: state.subtotal
+		subtotal: state.subtotal,
+		customer: state.customer
 	}
 }
 
